@@ -10,8 +10,11 @@ Requirements
 
 Installation instructions
 =========================
-After copying the source files to the webserver, run the install.php script.
+* Copy source files to your webserver
+* Create empty config file: "touch config.inc.php"
+* Make sure your webserver is able to write: "chmod 755 config.inc.php"
+* Run the install.php script.
 
 Contact
 =======
-For more information, please don't hesitate to contact me @rogierlommers
+For more information, please don't hesitate to contact me [@rogierlommers](#https://twitter.com/rogierlommers)
