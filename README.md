@@ -17,4 +17,4 @@ Installation instructions
 
 Contact
 =======
-For more information, please don't hesitate to contact me [@rogierlommers](#https://twitter.com/rogierlommers)
+For more information, please don't hesitate to contact me [@rogierlommers](https://twitter.com/rogierlommers)
