@@ -2,4 +2,4 @@
 .htpasswd
 .settings/
 .DS_Store
-dbsettings.inc.php
+config.inc.php
