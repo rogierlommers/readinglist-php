@@ -15,3 +15,6 @@ After copying the source files to the webserver, run the install.php script.
 Contact
 =======
 For more information, please don't hesitate to contact me @rogierlommers
+
+Example usage
+=============
