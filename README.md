@@ -17,11 +17,7 @@ Installation instructions
 
 Contact
 =======
-<<<<<<< HEAD
-For more information, please don't hesitate to contact me @rogierlommers
+For more information, please don't hesitate to contact me [@rogierlommers](https://twitter.com/rogierlommers).
 
 Example usage
 =============
-=======
-For more information, please don't hesitate to contact me [@rogierlommers](https://twitter.com/rogierlommers).
->>>>>>> 9e0d99b407f0d850d1f10e6db182e282cd88a074
