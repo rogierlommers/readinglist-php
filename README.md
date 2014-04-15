@@ -11,7 +11,7 @@ Requirements
 Installation instructions
 =========================
 * Copy source files to your webserver or check out latest version: "git clone git@github.com:rogierlommers/readinglist.git".
-* Copy content of example config file to config.inc.php: "cp config.inc.php.sample config.inc.php".
+* Copy content of example config file to config.inc.php: "cp config.inc.php.sample config.inc.php" and insert your mysql database connection.
 * Run the install.php script: php install.php (or within browser).
 * Open index.php
 * Create bookmarklet which points to freshly installed reading list app:
