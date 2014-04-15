@@ -14,7 +14,8 @@ Installation instructions
 * Copy content of example config file to config.inc.php: "cp config.inc.php.sample config.inc.php" and insert your mysql database connection.
 * Run the install.php script: php install.php (or within browser).
 * Open index.php
-* Create bookmarklet which points to freshly installed reading list app:
+* Create bookmarklet which points to freshly installed reading list app with javascript below
+* Add url application to your favorite RSS reader.
 
 ```javascript
 javascript:location.href='http://youserver.com/readinglist/index.php?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)
