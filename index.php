@@ -1,23 +1,21 @@
 <?php
-$dbhost = "localhost";
-$dbusername = "username";
-$dbpassword = "password";
-$dbname = "dbnamse";
+include("config.inc.php");
 
-$con = mysqli_connect ( $dbhost, $dbusername, $dbpassword, $dbname );
+$con = mysqli_connect ( $mysqlHost, $mysqlUser, $mysqlPassword, $mysqlDatabase );
 
 if (mysqli_connect_errno ()) {
   die ( "Failed to connect to MySQL: " . mysqli_connect_error () );
 }
 
-/* change character set to utf8 */
 if (! $con->set_charset ( "utf8" )) {
   printf ( "Error loading character set utf8: %s\n", $con->error );
   die ();
 }
+
 class Items {
   public $title;
   public $url;
+
   function __construct($title, $url) {
     $this->title = $title;
     $this->url = $url;
@@ -26,6 +24,8 @@ class Items {
 
 function generateXML() {
   global $con;
+  global $mysqlTable;
+  global $linkToSelf;
 
   // create simplexml object
   $xml = new SimpleXMLElement('<rss version="2.0"></rss>');
@@ -33,21 +33,20 @@ function generateXML() {
   // add channel information
   $xml->addChild('channel');
   $xml->channel->addChild('title', 'Reading list');
-  $xml->channel->addChild('link', 'http://server.lommers.org/readinglist/');
+  $xml->channel->addChild('link', $linkToSelf);
   $xml->channel->addChild('description', 'Contains saved urls');
   $xml->channel->addChild('pubDate', date(DATE_RSS));
 
   // Get items from database
-  $result = mysqli_query ( $con, "SELECT id, timestamp, title, url FROM readinglist ORDER BY id DESC limit 0,50" );
+  $result = mysqli_query ( $con, "SELECT id, timestamp, title, url FROM ". $mysqlTable ." ORDER BY id DESC limit 0,50" );
 
   while ( $row = mysqli_fetch_array ( $result ) ) {
     // create a element
-    $inlineDescription = "Link: &lt;a href=\"http://server.lommers.org/readinglist/index.php?redirect=" . $row ['id'] . "\"&gt;" . htmlspecialchars ( $row ['url'] ) . "&lt;/a&gt;<br/>";
-
+    $inlineDescription = "Link: &lt;a href=\"" . $linkToSelf . "index.php?redirect=" . $row ['id'] . "\"&gt;" . htmlspecialchars ( $row ['url'] ) . "&lt;/a&gt;<br/>";
     $item = $xml->channel->addChild('item');
     $item->addChild('title', $row['title']);
     $item->addChild('description', $inlineDescription);
-    $item->addChild('link', "http://server.lommers.org/readinglist/index.php?redirect=" . $row ['id']);
+    $item->addChild('link', $linkToSelf . "/index.php?redirect=" . $row ['id']);
     $item->addChild('pubDate', date(DATE_RSS, strtotime($row['timestamp'])));
     }
 
@@ -67,8 +66,8 @@ function redirect($id) {
   } else {
     echo ("Error fetching row");
   }
+  
 }
-
 
 function getHostFromUrl($url) {
   $parse = parse_url($url);
@@ -110,8 +109,7 @@ function addUrl($url) {
 
 }
 
-// MAIN STARTS HERE -----------------------------------------------------------------------------------------
-
+// MAIN STARTS HERE ------------------------------------------------------------------------------
 if (isSet ( $_GET ['url'] )) {
   // Add new url
   addUrl($_GET ['url']);

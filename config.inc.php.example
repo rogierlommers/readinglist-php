@@ -1,0 +1,10 @@
+<?php
+$mysqlHost     = "localhost";
+$mysqlUser     = "";
+$mysqlPassword = "";
+$mysqlDatabase = "";
+$mysqlTable    = "readinglist";
+
+// Public location of script
+$linkToSelf    = "http://urltoyourserver.com/readinglist/";
+?>
