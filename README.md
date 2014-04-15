@@ -16,12 +16,10 @@ Installation instructions
 * Open index.php
 * Create bookmarklet which points to freshly installed reading list app:
 
-{code}javascript:location.href='http://youserver.com/readinglist/index.php?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title){code}
+```javascript
+javascript:location.href='http://youserver.com/readinglist/index.php?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)
+```
 
 Contact
 =======
 For more information, please don't hesitate to contact me [@rogierlommers](https://twitter.com/rogierlommers).
-
-Example usage
-=============
-here
