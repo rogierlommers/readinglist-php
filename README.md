@@ -10,10 +10,13 @@ Requirements
 
 Installation instructions
 =========================
-* Copy source files to your webserver
-* Create empty config file: "touch config.inc.php"
-* Make sure your webserver is able to write: "chmod 755 config.inc.php"
-* Run the install.php script.
+* Copy source files to your webserver or check out latest version: "git clone git@github.com:rogierlommers/readinglist.git".
+* Copy content of example config file to config.inc.php: "cp config.inc.php.sample config.inc.php".
+* Run the install.php script: php install.php (or within browser).
+* Open index.php
+* Create bookmarklet which points to freshly installed reading list app:
+
+{code}javascript:location.href='http://youserver.com/readinglist/index.php?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title){code}
 
 Contact
 =======
@@ -21,3 +24,4 @@ For more information, please don't hesitate to contact me [@rogierlommers](https
 
 Example usage
 =============
+here
