@@ -1,7 +1,7 @@
-ReadingList
+Readinglist
 ===========
 
-ReadingList allows you to run your own collection of "urls to read". For example: you are reading a webpage and you want to mark it as "read later", you can use this service quickly send the page title and url into your own database. From there, the service generates an RSS feed containing all these urls. You can import this RSS feed into your own, favorite RSS client (f.e. TinyTinyRSS)
+Readinglist allows you to run your own collection of "urls to read". For example: you are reading a webpage and you want to mark it as "read later", you can use this service quickly send the page title and url into your own database. From there, the service generates an RSS feed containing all these urls. You can import this RSS feed into your own, favorite RSS client (f.e. TinyTinyRSS)
 
 Requirements
 ============
@@ -10,10 +10,10 @@ Requirements
 
 Installation instructions
 =========================
-* Copy source files to your webserver or check out latest version: "git clone git@github.com:rogierlommers/readinglist.git".
-* Copy content of example config file to config.inc.php: "cp config.inc.php.sample config.inc.php" and insert your mysql database connection.
-* Run the install.php script: php install.php (or within browser).
-* Open index.php
+* Copy source files to your webserver or check out latest version: `git clone git@github.com:rogierlommers/readinglist.git`.
+* Copy content of example config file to config.inc.php: `cp config.inc.php.sample config.inc.php` and insert your mysql database connection.
+* Run the install.php script: `php install.php` (or within browser).
+* Open index.php in browser
 * Create bookmarklet which points to freshly installed reading list app with javascript below
 * Add url application to your favorite RSS reader.
 
