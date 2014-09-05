@@ -18,7 +18,7 @@ Installation instructions
 * Add url application to your favorite RSS reader.
 
 ```javascript
-javascript:location.href='http://youserver.com/readinglist/index.php?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)
+javascript:location.href='http://yourserver.com/readinglist/index.php?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)
 ```
 
 Contact
