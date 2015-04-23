@@ -95,10 +95,7 @@ function addUrl($url) {
           <title>Url added</title>
       </head>
       <body>
-          <p style="font-family: verdana">Successfully inserted
-          <?php echo mysqli_affected_rows($con); ?>
-          row</p>
-          <p>Name: <?php echo(htmlspecialchars(str_replace("'",'',$_GET['title']))); ?></p>
+        <img width="100%" height="100%" src="static/check.png"/>
       </body>
   </html>
   <?php
